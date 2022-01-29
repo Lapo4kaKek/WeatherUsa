@@ -4,56 +4,22 @@ using System.IO;
 using System.Linq;
 namespace WeatherAnalysis
 {
-    //public record Table
-    //{
-    //public Table(string[] line)
-    //{
-    //    Event_id = line[0];
-    //    Type = WeatherType.Parse(line[1]);
-    //    Severity = line[2];
-    //    StartTime = DateTime.Parse(line[3]);
-    //    EndTime = DateTime.Parse(line[4]);
-    //    TimeZone = line[5];
-    //    AirportCode = line[6];
-    //    LocationLat = line[7];
-    //    LocationLng = line[8];
-    //    City = line[9];
-    //    County = line[10];
-    //    State = line[11];
-    //    ZipCode = line[12];
-    //}
-    ///EventId,Type,
-    ///Severity,StartTime(UTC),EndTime(UTC),TimeZone,
-    ///AirportCode,LocationLat,LocationLng,City,County,State,ZipCode
-    //    public string Event_id;// { get; init; }
-    //    public WeatherType Type; //{ get; init; }// Enum
-    //    public WeatherSeverity Severity; //{ get; init; }// Enum
-    //    public DateTime StartTime; //{ get; init; }
-    //    public DateTime EndTime;// { get; init; }
-    //    public string TimeZone; //{ get; init; }
-    //    public string AirportCode;// { get; init; }
-    //    public string LocationLat;//{ get; init; }
-    //    public string LocationLng; //{ get; init; }
-    //    public string City;//{ get; init; }
-    //    public string County; //{ get; init; }
-    //    public string State;//{ get; init; }
-    //    public string ZipCode; //{ get; init; }
-    //}
+    
     public record WeatherCreate
     (
-        string EventId, //{ get; init; }
-        WeatherType Type, //{ get; init; }
-        WeatherSeverity Severity,// { get; init; }
-        DateTime StartTime, //{ get; init; }
-        DateTime EndTime,// { get; init; }
-        string TimeZone,// { get; init; }
-        string AirportCode,// { get; init; }
-        string LocationLat, //{ get; init; }
-        string LocationLng, //{ get; init; }
-        string City, //{ get; init; }
-        string County, //{ get; init; }
-        string State, //{ get; init; }
-        string ZipCode //{ get; init; }
+        string EventId,
+        WeatherType Type, 
+        WeatherSeverity Severity,
+        DateTime StartTime, 
+        DateTime EndTime,
+        string TimeZone,
+        string AirportCode,
+        string LocationLat,
+        string LocationLng, 
+        string City, 
+        string County, 
+        string State, 
+        string ZipCode 
     );
     public enum WeatherType
     {
@@ -113,18 +79,7 @@ namespace WeatherAnalysis
             }
 
 
-            //List<string> typeweather = new List<string>();
-            //for (int i = 0; i < weather.Count(); i++)
-            //{
-            //    typeweather.Add(weather[i].Type);
-            //}
-            //IEnumerable<string> distinctType = typeweather.Distinct();
-
-            //Console.WriteLine("Уникальные явления погоды:");
-            //foreach (var type in distinctType)
-            //{
-            //    Console.WriteLine(type);
-            //}
+            
             Console.WriteLine("Task 0:");
             var result = from i in weather where i.StartTime.Year is 2018 select i;
             //var result = weather.Count(i => i.StartTime.Year is 2018);
