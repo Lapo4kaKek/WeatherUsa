@@ -136,19 +136,19 @@ namespace WeatherAnalysis
     }
     public record WeatherCreate
     (
-        string EventId, //{ get; init; }
-        WeatherType Type, //{ get; init; }
-        WeatherSeverity Severity,// { get; init; }
-        DateTime StartTime, //{ get; init; }
-        DateTime EndTime,// { get; init; }
-        string TimeZone,// { get; init; }
-        string AirportCode,// { get; init; }
-        string LocationLat, //{ get; init; }
-        string LocationLng, //{ get; init; }
-        string City, //{ get; init; }
-        string County, //{ get; init; }
-        string State, //{ get; init; }
-        string ZipCode //{ get; init; }
+        string EventId,
+        WeatherType Type, 
+        WeatherSeverity Severity,
+        DateTime StartTime,
+        DateTime EndTime,
+        string TimeZone,
+        string AirportCode,
+        string LocationLat,
+        string LocationLng, 
+        string City,
+        string County,
+        string State,
+        string ZipCode
     );
     public enum WeatherType
     {
@@ -207,15 +207,6 @@ namespace WeatherAnalysis
                     countLine += 1;
                 }
             }
-
-            //CallingMethod AnalyticsWeather = Task.Task0;
-            //AnalyticsWeather += Task.Task1;
-            //AnalyticsWeather += Task.Task2;
-            //AnalyticsWeather += Task.Task3;
-            //AnalyticsWeather += Task.Task4;
-            //AnalyticsWeather += Task.Task5;
-            //AnalyticsWeather += Task.Task6;
-            //AnalyticsWeather(weather);
             List<CallingMethod> analyticsWeather = new List<CallingMethod>(7);
             analyticsWeather.Add(MethodAnalytics.Task0);
             analyticsWeather.Add(MethodAnalytics.Task1);
@@ -259,7 +250,8 @@ namespace WeatherAnalysis
             };
             foreach (var item in tasks)
                 item.Start();
-            Task.WaitAll(tasks); // ожидаем завершения задач
+            // ожидаем завершения задач
+            Task.WaitAll(tasks);
             measurementThree.Stop();
 
             Console.WriteLine("\n\n\n\n");
